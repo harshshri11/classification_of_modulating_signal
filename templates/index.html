@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Signal Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hidden Signal Classification</h1>
+        <div class="controls">
+            <label>SNR (dB): 
+                <input type="range" id="snr" min="5" max="30" step="1" value="20">
+                <span id="snr-value">20</span> <!-- Display value here -->
+            </label>
+            
+            <label>Carrier Frequency (Hz): 
+                <input type="range" id="freq" min="1" max="10" step="1" value="5">
+                <span id="freq-value">5</span> <!-- Display value here -->
+            </label>
+            
+            <label>Amplitude: 
+                <input type="range" id="amplitude" min="0.5" max="2.0" step="0.1" value="1.0">
+                <span id="amplitude-value">1.0</span> <!-- Display value here -->
+            </label>
+            
+            <label>Phase Shift (radians): 
+                <input type="range" id="phase" min="0" max="3.14" step="0.01" value="0">
+                <span id="phase-value">0</span> <!-- Display value here -->
+            </label>
+            
+            <button onclick="classifySignal()">Classify Signal</button>
+        </div>
+        
+        <div class="output">
+            <!-- Move the Prediction label above the image or adjust its position -->
+            <div id="prediction-text"></div>
+            <img id="plot" src="" alt="Signal Plot" />
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

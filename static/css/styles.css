@@ -1,0 +1,221 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Centered container with a dark background */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+    background: #222; /* Darker background for the form */
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Styling for form controls */
+.controls {
+    margin-top: 2rem;
+}
+
+/* Styling for range input (slider) value display */
+.controls label {
+    display: block;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #ddd;
+    text-align: left;
+}
+
+.controls span {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #ffcc00; /* Color for value */
+    margin-left: 10px;
+    padding: 0.3rem;
+    background: #444;
+    border-radius: 8px;
+    min-width: 40px;
+    text-align: center;
+}
+
+
+/* Styling for range input (slider) */
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #444;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    transition: background 0.3s ease;
+    cursor: pointer; /* Ensure the cursor indicates it's draggable */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]:hover {
+    background: #666;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #0056b3;
+}
+
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for output section */
+/* Styling for output section */
+.output {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    border-radius: 12px;
+    background: #333;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Prediction label styling */
+#prediction-text {
+    font-size: 1.5rem;
+    color: #ffcc00; /* Yellow color for better visibility */
+    font-weight: bold;
+    margin-bottom: 1rem; /* Add space between text and image */
+}
+
+/* Centered image block for signal plot */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Loader animation */
+.loader {
+    width: 65px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px inset #fff;
+    animation: l4 2.5s infinite;
+}
+
+.loader:after {
+    animation-delay: -1.25s;
+}
+
+@keyframes l4 {
+    0% {
+        inset: 0 35px 35px 0;
+    }
+    12.5% {
+        inset: 0 35px 0 0;
+    }
+    25% {
+        inset: 35px 35px 0 0;
+    }
+    37.5% {
+        inset: 35px 0 0 0;
+    }
+    50% {
+        inset: 35px 0 0 35px;
+    }
+    62.5% {
+        inset: 0 0 0 35px;
+    }
+    75% {
+        inset: 0 0 35px 35px;
+    }
+    87.5% {
+        inset: 0 0 35px 0;
+    }
+    100% {
+        inset: 0 35px 35px 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="range"] {
+        height: 6px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    .output {
+        min-height: 200px; /* Adjust the height for smaller screens */
+        padding: 1.5rem;
+    }
+}
