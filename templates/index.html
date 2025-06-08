@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulation Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/visualizations">Visualizations</a>
+    </nav>
+
+    <div class="container">
+        <h1>Modulation Prediction</h1>
+        <form action="/predict" method="post">
+            <input type="number" name="Bandwidth" placeholder="Bandwidth" required>
+            <input type="number" name="Symbol_Rate" placeholder="Symbol Rate" required>
+            <input type="number" name="PAPR" placeholder="PAPR" required>
+            <input type="number" name="Mod_Index" placeholder="Modulation Index" required>
+            <input type="number" name="Spectral_Entropy" placeholder="Spectral Entropy" required>
+            <input type="number" name="Freq_Variance" placeholder="Frequency Variance" required>
+            <input type="number" name="Phase" placeholder="Phase" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="prediction-container">
+                <h2>Predicted Modulation: </h2>
+                <p>{{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Modulation Predictor. All rights reserved.</p>
+    </footer>
+</body>
+</html>

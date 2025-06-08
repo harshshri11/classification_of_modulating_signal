@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/visualization.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>📊 Modulation Dataset Visualizations</h2>
+        </header>
+
+        <section class="links">
+            <h3>Choose a Visualization:</h3>
+            <ul>
+                <li><a href="/plot/pairplot">Pair Plot</a></li>
+                <li><a href="/plot/histogram">Histogram</a></li>
+                <li><a href="/plot/countplot">Count Plot</a></li>
+                <li><a href="/plot/heatmap">Correlation Heatmap</a></li>
+            </ul>
+        </section>
+
+        {% if plot_url %}
+        <section class="visualization-output">
+            <h3>Visualization Output:</h3>
+            <img src="{{ url_for('static', filename='plots/' + plot_url.split('/')[-1]) }}" alt="Plot Image" class="plot-image">
+        </section>
+        {% endif %}
+
+        <section class="back-link">
+            <a href="/">⬅️ Back to Prediction</a>
+        </section>
+
+        <footer>
+            <p>© 2025 Modulation Prediction Visualization</p>
+        </footer>
+    </div>
+</body>
+</html>
